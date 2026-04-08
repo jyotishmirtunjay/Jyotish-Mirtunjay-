@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Payment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#2b0033,#1a001f);
+color:white;
+padding:20px;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+text-align:center;
+}
+
+h2{margin-bottom:10px;}
+
+.sub{
+font-size:13px;
+color:#ccc;
+margin-bottom:15px;
+}
+
+.user{
+background:rgba(255,255,255,0.05);
+padding:12px;
+border-radius:10px;
+margin-bottom:15px;
+font-size:14px;
+text-align:left;
+}
+
+.amount{
+font-size:26px;
+font-weight:bold;
+margin:15px 0;
+color:#ffcc33;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:16px;
+margin-top:10px;
+border-radius:12px;
+text-align:center;
+font-weight:bold;
+text-decoration:none;
+font-size:16px;
+}
+
+.upi{
+background:linear-gradient(90deg,#ffb347,#ffcc33);
+color:black;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+.copy{
+margin-top:12px;
+font-size:13px;
+color:#ccc;
+background:rgba(255,255,255,0.05);
+padding:10px;
+border-radius:10px;
+}
+
+.trust{
+margin-top:15px;
+font-size:13px;
+color:#ccc;
+line-height:1.6;
+}
+
+.support{
+margin-top:20px;
+font-size:14px;
+color:#ccc;
+}
+
+/* QR */
+.qr{
+margin-top:15px;
+}
+.qr img{
+width:200px;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🔒 Secure Payment</h2>
+<div class="sub">100% Safe & Private Consultation Booking</div>
+
+<div class="user" id="userdata"></div>
+
+<div class="amount" id="amountBox">Pay ₹109</div>
+
+<!-- UPI BUTTON -->
+<a class="btn upi" id="upiLink">
+Pay via UPI App
+</a>
+
+<!-- COPY -->
+<div class="copy">
+UPI ID: <b onclick="copyUPI()">jyotishmirtunjay@ptyes</b><br>
+(Tap to copy if button not working)
+</div>
+
+<!-- QR (IMPORTANT FALLBACK) -->
+<div class="qr">
+<p>Scan & Pay (Recommended)</p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=jyotishmirtunjay@ptyes&pn=Mirtunjay&am=109&cu=INR">
+</div>
+
+<div class="trust">
+✔️ Verified Payment Account <br>
+✔️ 100% Safe & Secure <br>
+✔️ Instant Confirmation <br>
+✔️ Trusted by Customers
+</div>
+
+<a class="btn whatsapp" id="whatsappLink">
+Send Screenshot on WhatsApp
+</a>
+
+<div class="support">
+📞 Customer Support: 9241122748
+</div>
+
+</div>
+
+<script>
+
+// USER DATA
+let name = localStorage.getItem("name");
+let city = localStorage.getItem("city");
+let state = localStorage.getItem("state");
+
+document.getElementById("userdata").innerHTML =
+"Name: " + name + "<br>City: " + city + "<br>State: " + state;
+
+// RANDOM AMOUNT
+let base = 109;
+let rand = Math.floor(Math.random()*3);
+let amount = base + rand;
+
+document.getElementById("amountBox").innerText = "Pay ₹" + amount;
+
+// UPI LINK
+let upi = `upi://pay?pa=jyotishmirtunjay@ptyes&pn=Mirtunjay&am=${amount}&cu=INR`;
+document.getElementById("upiLink").href = upi;
+
+// WHATSAPP
+let msg = `Hello, I have completed payment of ₹${amount}. Name: ${name}, City: ${city}, State: ${state}`;
+let wa = "https://wa.me/919241122748?text=" + encodeURIComponent(msg);
+document.getElementById("whatsappLink").href = wa;
+
+// COPY
+function copyUPI(){
+navigator.clipboard.writeText("jyotishmirtunjay@ptyes");
+alert("UPI ID copied");
+}
+
+</script>
+
+</body>
+</html>
