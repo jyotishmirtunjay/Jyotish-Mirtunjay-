@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astrologer Consultation</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+background:#0B1C2C;
+font-family:'Poppins',sans-serif;
+color:white;
+}
+
+/* FULL WIDTH */
+.full{
+width:100%;
+padding:25px 10px;
+background:linear-gradient(135deg,#0B1C2C,#08141f);
+}
+
+/* CONTAINER (COMPACT + CENTERED) */
+.container{
+max-width:500px;
+margin:auto;
+padding:20px 15px;
+text-align:center;
+}
+
+/* LOGO */
+.logo-row{
+display:flex;
+align-items:center;
+margin-bottom:15px;
+}
+.line{
+flex:1;
+height:1px;
+background:linear-gradient(to right,transparent,gold,transparent);
+}
+.logo{
+width:85px;
+height:85px;
+border-radius:50%;
+border:2px solid gold;
+}
+
+/* HIGHLIGHT */
+.highlight{
+background:linear-gradient(45deg,#FFD700,#FFC107);
+color:black;
+padding:10px;
+border-radius:10px;
+margin:12px 0;
+font-weight:600;
+font-size:14px;
+}
+
+/* BUTTON (CENTERED + PERFECT SIZE) */
+.btn{
+display:block;
+width:90%;
+margin:15px auto;
+padding:14px;
+background:linear-gradient(45deg,#ff7b00,#ff3d00);
+border-radius:50px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:15px;
+text-align:center;
+box-shadow:0 5px 15px rgba(255,80,0,0.5);
+transition:0.2s;
+}
+.btn:active{
+transform:scale(0.96);
+}
+
+/* TEXT */
+h2{
+font-size:18px;
+margin:12px 0;
+}
+p{
+font-size:14px;
+color:#ccc;
+}
+
+/* BOX */
+.box{
+background:rgba(255,255,255,0.05);
+padding:12px;
+border-radius:10px;
+margin-top:12px;
+text-align:left;
+font-size:14px;
+line-height:1.6;
+}
+
+/* IMAGE */
+.hero-img{
+width:100%;
+border-radius:10px;
+margin:15px 0;
+}
+
+/* URGENCY */
+.urgency{
+background:#ff000020;
+color:#ff4d4d;
+padding:10px;
+border-radius:10px;
+margin-top:12px;
+font-weight:bold;
+font-size:14px;
+}
+
+/* FOOTER */
+.footer{
+font-size:12px;
+color:#aaa;
+margin-top:15px;
+}
+
+/* POPUP */
+#popup{
+position:fixed;
+bottom:15px;
+left:10px;
+background:#000;
+padding:8px 10px;
+border-radius:8px;
+color:#0f0;
+display:none;
+font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="full">
+<div class="container">
+
+<!-- LOGO -->
+<div class="logo-row">
+<div class="line"></div>
+<img src="https://i.ibb.co/VWy1sFCL/IMG-20251120-080251.jpg" class="logo">
+<div class="line"></div>
+</div>
+
+<!-- VERIFIED -->
+<div class="highlight">
+✔ Verified Astrologer • 11K+ Followers
+</div>
+
+<!-- CTA -->
+<a href="form.html" class="btn">
+📞 Consultation Start Kare
+</a>
+
+<h2>🔮 Kya Aapki Zindagi Me Ye Problems Chal Rahi Hai?</h2>
+
+<p>Agar aap pareshaan hai, to aaj hi samadhan paaye</p>
+
+<!-- PROBLEMS -->
+<div class="box">
+💔 Love Problem / Breakup <br>
+💍 Shaadi me delay <br>
+💼 Career / Job issue <br>
+💰 Paisa problem <br>
+📉 Business loss <br>
+👪 Family tension <br>
+😔 Nazar / Negative energy
+</div>
+
+<!-- IMAGE -->
+<img src="https://i.ibb.co/Q3pX1Yw0/In-Shot-20260324-121332907.jpg" class="hero-img">
+
+<!-- CTA -->
+<a href="form.html" class="btn">
+👉 Abhi Book Kare
+</a>
+
+<!-- SOCIAL -->
+<div class="highlight">
+🔥 121+ log already consult kar chuke hai
+</div>
+
+<!-- SOLUTION -->
+<div class="box">
+✔️ 1-to-1 Personal Consultation <br>
+✔️ Kundli Analysis <br>
+✔️ Exact Solution <br>
+✔️ 100% Private
+</div>
+
+<!-- TRUST -->
+<div class="box">
+🔐 Safe Payment <br>
+📿 Trusted Guidance <br>
+🙏 No Fake Promise
+</div>
+
+<!-- URGENCY -->
+<div class="urgency">
+⚠️ Sirf 7 slots available
+</div>
+
+<p style="color:#ff4d4d;font-weight:bold;">
+⚠️ Sirf serious log hi booking kare
+</p>
+
+<!-- FINAL CTA -->
+<a href="form.html" class="btn">
+🚀 Final Booking Kare
+</a>
+
+<div class="footer">
+🔒 Safe & Secure • Privacy Guaranteed
+</div>
+
+</div>
+</div>
+
+<!-- POPUP -->
+<div id="popup"></div>
+
+<script>
+var n=["Rohit","Amit","Pooja","Neha","Rahul","Sneha"];
+setInterval(function(){
+var popup=document.getElementById("popup");
+popup.innerHTML="🔥 "+n[Math.floor(Math.random()*n.length)]+" ne booking ki";
+popup.style.display="block";
+setTimeout(()=>popup.style.display="none",3000);
+},5000);
+</script>
+
+</body>
+</html>
