@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+padding:0;
+background:#0B1C2C;
+font-family:'Poppins',sans-serif;
+}
+
+/* FULL WIDTH (REAL FULL) */
+.full{
+width:100%;
+padding:30px 15px;
+background:linear-gradient(135deg,#0B1C2C,#08141f);
+color:white;
+}
+
+/* FULL WIDTH CONTAINER */
+.container{
+width:100%;
+max-width:100%;
+margin:auto;
+padding:20px;
+border-radius:15px;
+}
+
+/* LOGO */
+.logo-row{
+display:flex;
+align-items:center;
+margin-bottom:20px;
+}
+.line{
+flex:1;
+height:1px;
+background:linear-gradient(to right,transparent,gold,transparent);
+}
+.logo{
+width:90px;
+height:90px;
+border-radius:50%;
+border:2px solid gold;
+}
+
+/* HIGHLIGHT */
+.highlight{
+background:linear-gradient(45deg,#FFD700,#FFC107);
+color:black;
+padding:12px;
+border-radius:10px;
+margin:15px 0;
+font-weight:600;
+text-align:center;
+}
+
+/* BUTTON (BIG & PREMIUM) */
+.btn{
+display:block;
+width:100%;
+margin:18px 0;
+padding:18px;
+background:linear-gradient(45deg,#ff7b00,#ff3d00);
+border-radius:50px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
+text-align:center;
+box-shadow:0 5px 25px rgba(255,80,0,0.6);
+}
+
+/* TEXT */
+h2{
+font-size:22px;
+margin:15px 0;
+}
+p{
+color:#ccc;
+}
+
+/* BOX */
+.box{
+background:rgba(255,255,255,0.05);
+padding:15px;
+border-radius:12px;
+margin-top:15px;
+line-height:1.7;
+}
+
+/* IMAGE */
+.hero-img{
+width:100%;
+border-radius:12px;
+margin:20px 0;
+}
+
+/* URGENCY */
+.urgency{
+background:#ff000020;
+color:#ff4d4d;
+padding:12px;
+border-radius:10px;
+margin-top:15px;
+font-weight:bold;
+text-align:center;
+}
+
+/* POPUP */
+#popup{
+position:fixed;
+bottom:20px;
+left:10px;
+background:#000;
+padding:10px 12px;
+border-radius:10px;
+color:#0f0;
+display:none;
+font-size:13px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="full">
+<div class="container">
+
+<!-- LOGO -->
+<div class="logo-row">
+<div class="line"></div>
+<img src="https://i.ibb.co/VWy1sFCL/IMG-20251120-080251.jpg" class="logo">
+<div class="line"></div>
+</div>
+
+<!-- VERIFIED -->
+<div class="highlight">
+✔ Verified Astrologer • 11K+ Followers
+</div>
+
+<!-- CTA (NO PRICE) -->
+<a href="form.html" class="btn">
+📞 Consultation Start Kare
+</a>
+
+<h2>🔮 Kya Aapki Zindagi Me Ye Problems Chal Rahi Hai?</h2>
+
+<p>Agar aap pareshaan hai, to aaj hi samadhan paaye</p>
+
+<div class="box">
+💔 Love Problem <br>
+💍 Shaadi delay <br>
+💼 Career issue <br>
+💰 Paisa problem <br>
+📉 Business loss <br>
+👪 Family tension
+</div>
+
+<img src="https://i.ibb.co/Q3pX1Yw0/In-Shot-20260324-121332907.jpg" class="hero-img">
+
+<a href="form.html" class="btn">
+👉 Abhi Book Kare
+</a>
+
+<div class="highlight">
+🔥 121+ log already consult kar chuke hai
+</div>
+
+<div class="box">
+✔️ Personal Consultation <br>
+✔️ Kundli Analysis <br>
+✔️ Exact Problem Solution <br>
+✔️ 100% Private
+</div>
+
+<div class="urgency">
+⚠️ Sirf 7 slots aaj ke liye available
+</div>
+
+<a href="form.html" class="btn">
+🚀 Final Booking Kare
+</a>
+
+</div>
+</div>
+
+<div id="popup"></div>
+
+<script>
+var n=["Rohit","Amit","Pooja","Neha","Rahul"];
+setInterval(function(){
+var popup=document.getElementById("popup");
+popup.innerHTML="🔥 "+n[Math.floor(Math.random()*n.length)]+" ne booking ki";
+popup.style.display="block";
+setTimeout(()=>popup.style.display="none",3000);
+},5000);
+</script>
+
+</body>
+</html>
