@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Payment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#2b0033,#1a001f);
+color:white;
+padding:20px;
+}
+
+/* BOX */
+.container{
+max-width:500px;
+margin:auto;
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* TITLE */
+h2{
+text-align:center;
+margin-bottom:15px;
+}
+
+/* USER DATA */
+.user{
+background:rgba(255,255,255,0.05);
+padding:10px;
+border-radius:10px;
+margin-bottom:15px;
+font-size:14px;
+}
+
+/* AMOUNT */
+.amount{
+text-align:center;
+font-size:22px;
+font-weight:bold;
+margin:15px 0;
+color:#ffcc33;
+}
+
+/* BUTTON */
+.btn{
+display:block;
+width:100%;
+padding:15px;
+margin-top:10px;
+border-radius:12px;
+text-align:center;
+font-weight:bold;
+text-decoration:none;
+}
+
+.upi{
+background:linear-gradient(90deg,#ffb347,#ffcc33);
+color:black;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+/* SUPPORT */
+.support{
+margin-top:20px;
+font-size:14px;
+text-align:center;
+color:#ccc;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Complete Your Payment</h2>
+
+<div class="user" id="userdata"></div>
+
+<div class="amount">Pay ₹199</div>
+
+<!-- UPI BUTTON -->
+<a class="btn upi" id="upiLink">
+Pay via UPI (GPay / PhonePe)
+</a>
+
+<!-- WHATSAPP -->
+<a class="btn whatsapp" id="whatsappLink">
+Send Payment Screenshot on WhatsApp
+</a>
+
+<div class="support">
+📞 Customer Support: 9241122748
+</div>
+
+</div>
+
+<script>
+// Get user data
+let name = localStorage.getItem("name");
+let city = localStorage.getItem("city");
+let state = localStorage.getItem("state");
+
+document.getElementById("userdata").innerHTML =
+"Name: " + name + "<br>City: " + city + "<br>State: " + state;
+
+// UPI link
+let upi = "upi://pay?pa=iammirtunjay-1@oksbi&pn=Astrology%20Consultation&am=199&cu=INR";
+document.getElementById("upiLink").href = upi;
+
+// WhatsApp message
+let msg = `Hello, I have completed payment.%0AName: ${name}%0ACity: ${city}%0AState: ${state}`;
+let wa = "https://wa.me/919241122748?text=" + msg;
+
+document.getElementById("whatsappLink").href = wa;
+</script>
+
+</body>
+</html>
