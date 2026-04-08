@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+padding:20px;
+}
+
+/* BOX */
+.container{
+max-width:420px;
+margin:auto;
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+/* TITLE */
+h2{
+margin-bottom:10px;
+}
+
+.amount{
+font-size:26px;
+color:#facc15;
+margin:10px 0;
+font-weight:bold;
+}
+
+/* QR */
+.qr img{
+width:220px;
+border-radius:10px;
+margin-top:10px;
+}
+
+/* COPY */
+.copy{
+margin-top:12px;
+background:#111827;
+padding:10px;
+border-radius:10px;
+font-size:14px;
+line-height:1.6;
+}
+
+/* BUTTON */
+.btn{
+display:block;
+margin-top:15px;
+padding:14px;
+background:#22c55e;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* TEXT */
+.note{
+margin-top:15px;
+font-size:13px;
+color:#ccc;
+line-height:1.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🔒 Secure Payment</h2>
+
+<div class="amount">₹110 Pay Kare</div>
+
+<!-- QR -->
+<div class="qr">
+<img src="https://i.ibb.co/mVsgp0SX/IMG-20260408-122916.png">
+</div>
+
+<!-- COPY -->
+<div class="copy">
+UPI ID: <b onclick="copyUPI()">926397@sbi</b><br>
+Mobile Number: <b onclick="copyNum()">9263974397</b><br>
+(Name: Mirtunjay)
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="note">
+📌 Payment kaise kare:<br><br>
+
+1. QR code scan kare 📷<br>
+2. Ya UPI ID copy karke payment kare 💳<br>
+3. Ya mobile number dalke payment kare 📱<br><br>
+
+👉 Amount ₹110 hi dale<br><br>
+
+✅ Payment ke baad screenshot WhatsApp par bhej dijiye
+</div>
+
+<!-- WHATSAPP -->
+<a class="btn" href="https://wa.me/919241122748?text=Hello%20maine%20payment%20kar%20diya%20hai">
+WhatsApp par Screenshot bheje
+</a>
+
+</div>
+
+<script>
+
+function copyUPI(){
+navigator.clipboard.writeText("926397@sbi");
+alert("UPI ID copied");
+}
+
+function copyNum(){
+navigator.clipboard.writeText("9263974397");
+alert("Number copied");
+}
+
+</script>
+
+</body>
+</html>
